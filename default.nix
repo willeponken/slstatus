@@ -1,4 +1,4 @@
-{ stdenv, libX11, alsaLib }:
+{ stdenv, desktop ? false, libX11, alsaLib }:
 
 stdenv.mkDerivation {
   name = "slstatus-HEAD";
@@ -11,6 +11,8 @@ stdenv.mkDerivation {
   prePatch = ''
     substituteInPlace config.mk --replace '/usr/local' $out
   '';
+
+  patch = if desktop then [ ./desktop.patch ] else [];
 
   meta = with stdenv.lib; {
     description = "Suckless statusbar for window managers using WM_NAME or stdin";

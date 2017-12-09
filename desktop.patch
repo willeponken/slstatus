@@ -1,0 +1,15 @@
+diff --git a/config.def.h b/config.def.h
+index 523de5c..1ba7d05 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -53,10 +53,6 @@ static const struct arg args[] = {
+ 	/* function format          argument */
+ 	{ cpu_perc, "cpu %3s%% | ", NULL    },
+ 	{ ram_perc, "ram %3s%% | ", NULL    },
+-	{ wifi_essid, "wifi %s ", "wlp3s0" },
+-	{ wifi_perc, "[%3s%%] | ", "wlp3s0" },
+ 	{ vol_perc, "vol %3s%% | ", "/dev/mixer" },
+-	{ battery_perc, "bat %3s%% ", "BAT0" },
+-	{ battery_state, "[%s] | ", "BAT0" },
+ 	{ datetime, "%s ",       "%F %T" },
+ };
